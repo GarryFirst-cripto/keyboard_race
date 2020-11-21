@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="/styles/headerStyles.css">
+  <link rel="stylesheet" type="text/css" href="/styles/buttonStyles.css">
+  <link rel="stylesheet" type="text/css" href="/styles/roompageStyles.css">
+  <link rel="stylesheet" type="text/css" href="/styles/gamepageStyles.css">
+  <link rel="stylesheet" type="text/css" href="/styles/modalStyles.css">
+  <script src="/socket.io/socket.io.js"></script>
+  <script defer type="module" src="/javascript/game.mjs"></script>
+  <title>Game</title>
+</head>
+
+<body>
+  <section id="hall">
+    <header class="header">
+      <button id="newroomButton" class="button button_left"> New Room </button>
+      <button id="logoffButton" class="button button_right"> Log Off </button>
+      <span class="header_text"> Join Room or Create New </span>
+    </header>
+    <section class="room-page">
+      <div id="roombox" class="rooms">
+      </div>
+      <div class="users_panel">
+        <div id="userbox" class="users">
+        </div>
+        <div class="users_chat">
+          <div id="addressee" style="position: relative; float: top; margin: 5%"> Адресат : </div>
+          <input id="message" type="text" style="position: relative; float: left; width: 70%; font-size: 16px; margin-left: 5%">
+          <button id="sendmess" style="margin-left: 10px" >Send</button>
+          <div id="messages" style="position: relative; float: bottom; width: 90%; height: 65%; margin-top: 5%; margin-left: 5%; margin-bottom: 5px; background-color: #f6f1f1"></div>
+        </div>
+      </div>
+    </section>
+  </section>
+  <section id="room" style="display: none">
+    <header class="game-header">
+      <span id="roomheader" class="header_text"> Room Name #3 </span>
+    </header>
+    <section class="game-page">
+      <div class="game">
+          <div class="gamersbox">
+              <button id="exitroom" class="button button-back">
+                  <- Back to Rooms
+              </button>
+              <button id="setready" class="button button-ready">
+                  Ready
+              </button>
+              <label id="gametime" class="gametime"></label>
+              <div id="gamers" class="gamers">
+              </div>
+          </div>
+          <div class="tablobox">
+            <div id="tablo" class="tablo">
+              <div id="timer" class="timer"></div>
+              <div id="textbox">
+              </div>
+            </div>
+          </div>
+      </div>
+      <div class="gemers_chat">
+        <div style="position: relative; float: top; height: 50%; background-color: #e2e495">
+          <div id="commentator" class="commentator">
+            
+          </div>
+          <img src="https://i.gifer.com/75Fe.gif" style="position: absolute; left: 0; bottom: 0; width: 50%" alt="commentator">
+          <img src="https://kpspddpu.ucoz.ua/News1.gif" style="position: absolute; right: 0; bottom: 0; width: 50%" alt="news">
+        </div>
+        <div style="position: relative; float: top; height: 48%; overflow: hidden">
+          <div style="position: relative; float: top; margin: 5%"> Общий чат комнаты </div>
+          <input id="roomtext" class="roomtext" type="text">
+          <button id="sendsendmess" style="margin-left: 10px" >Send</button>
+          <div id="roommess" class="roommess"></div>
+        </div>
+      </div>
+    </section>
+  </section>
+
+  <footer class="footer">
+    &#169 <span class="cap-letter">P</span>owered by Garry Levin
+  </footer>
+
+</body>
+
+</html>

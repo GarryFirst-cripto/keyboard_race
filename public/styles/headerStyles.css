@@ -1,0 +1,76 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+  
+body {
+  box-sizing: border-box;
+  margin: 0;
+  --otstup: 150px;
+  --heightFooter: 50px;
+  --size: calc(var(--heightFooter) - 10px);
+  background-color: white;
+}
+
+.header {
+    position: sticky;
+    top: 0;
+    height: var(--heightFooter);
+    background-color: white;
+}
+
+.header_text {
+    margin-left: 310px;
+    font-size: 36px;
+    font-weight: bold;
+}
+
+.logo {
+    float: left;
+    margin-left: var(--otstup);
+    height: 100%;
+}
+
+.menublock {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    float: right;
+    margin-right: var(--otstup);
+}
+
+.simb-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    float: right;
+    color: white;
+    background-color: #c78d43;
+    font-size: 26px;
+    font-weight: bold;
+    margin-left: 10px;
+    width: var(--size);
+    height: var(--size);
+    border-radius: calc(var(--size) / 2);
+    cursor: pointer;
+}
+
+.cap-letter {
+    margin-left: 10px;
+    font-size: 22px;
+    font-weight: bold;
+    color: #ff003b;
+}
+
+.footer {
+    display: flex;
+    position: relative;
+    bottom: 0;
+    height: 50px;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    font-family: "Times New Roman";
+}

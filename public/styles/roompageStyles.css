@@ -1,0 +1,112 @@
+    .room-page {
+        display: flex;
+        position: relative;
+        min-height: calc(100vh - var(--heightFooter) * 2);
+        padding: 0 var(--otstup);
+    }
+
+    .rooms {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        position: relative;
+        align-items: center;
+        justify-content: space-evenly;
+        float: left;
+        width: 80%;
+        overflow: auto;
+        background-color: #acf5a1;
+        font-size: 20px;
+    }
+
+    .room {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 260px;
+        height: 200px;
+        margin: 10px;
+        border: 1px black solid;
+        background: linear-gradient(to bottom, #ffef86, #efae28) #fff8fd;
+    }
+
+    .room .room-state {
+        position: relative; 
+        align-self: flex-start; 
+        margin: 5px; 
+        font-size: 20px;
+    }
+
+    .room .room-name {
+        position: relative; 
+        align-self: center; 
+        font-size: 26px;
+    }
+
+    .room .room-button {
+        position: relative; 
+        align-self:center;
+    }
+
+    .room .room-button-busy {
+        position: relative; 
+        align-self:center;
+        opacity: 0.3;
+    }
+
+    .users_panel {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        width: 20%;
+    }
+
+    .users {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        align-items: center;
+        justify-content: flex-start;
+        float: left;
+        height: 60%;
+        width: 100%;
+        overflow: auto;
+        background-color: #89e7e7;
+    }
+
+    .user {
+        position: relative;
+        float: left;
+        width: 90%;
+        min-height: 40px;
+        border: 2px solid;
+        border-radius: 5px;
+        border-image-source: linear-gradient(to bottom right, #26d62e, #259013);
+        border-image-slice: 1;
+        background: linear-gradient(to bottom, #86ffaf, #29f732) #fff8fd;
+        box-shadow: 5px 5px 15px rgba(135, 168, 196, 0.5);
+        margin: 5px;
+        word-wrap: break-word;
+        font: 16px Roboto;
+        font-weight: bold;
+        overflow: hidden;
+        cursor: pointer;
+    }
+
+    .busy {
+        border-image-source: linear-gradient(to bottom right, #d67826, #d7c637);
+        background: linear-gradient(to bottom, #baabab, #715e65) #fff8fd;
+    }
+
+    .user:active {
+        padding-left: 10px;
+        background: linear-gradient(to top, #65f9db, #78e4d9) #fff8fd;
+    }
+
+    .users_chat {
+        position: relative;
+        float: bottom;
+        height: 40%;
+        background-color: #ec768f;
+        overflow: auto;
+    }

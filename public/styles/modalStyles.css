@@ -1,0 +1,62 @@
+.modalcover {
+    display: block;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+}
+
+@keyframes modalshow {
+    0%  { top: -50%; opacity: 0}
+   50%  { opacity: 1} 
+  100%  { top:  25%; opacity: 1}
+}
+
+.modalwindow {
+    display: block;
+    position: absolute;
+    top: 25%;
+    left: 34%;
+    width: 30%;
+    height: 50%;
+    animation: modalshow 1s linear;
+    background-color: yellow;
+    border: 5px solid rgb(70, 48, 196);
+    border-radius: 10px;
+    z-index: 2;
+}
+
+.modaltitle {
+    position: relative;
+    left: 0;
+    top: 0;
+    width: calc(100% - 4px);
+    height: 50px;
+    justify-content: center;
+    text-align: center;
+    font-size: 20px;
+    z-index: 2;
+}
+
+.modalresult {
+    position: relative;
+    display: block;
+    position: absolute;
+    margin: 5%;
+    z-index: 2;
+}
+
+.modalfooter {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: calc(100% - 4px);
+    height: 50px;
+    text-align: center;
+    font-size: 20px;
+    font-family: "Times New Roman";
+    z-index: 2;
+}
+

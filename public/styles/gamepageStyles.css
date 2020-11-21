@@ -1,0 +1,225 @@
+    .game-page {
+        display: flex;
+        position: relative;
+        min-height: calc(100vh - var(--heightFooter) * 2);
+        padding: 0 5%;
+    }
+
+    .game {
+        position: relative;
+        float: left;
+        width: 70%;
+        overflow: auto;
+    }
+
+    .gamersbox {
+        position: relative;
+        float: left;
+        width: 40%;
+        height: 100%;
+        overflow: auto;
+        background-color: #acf5a1;
+    }
+
+    .gamers {
+        display: flex;
+        position: absolute;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        top: 260px;
+        bottom: 15px;
+        left: 15px;
+        right: 15px;
+        overflow: auto;
+    }
+
+    .gamer {
+        position: relative;
+        float: left;
+        width: 90%;
+        border: 2px black solid;
+        border-radius: 5px;
+        background: linear-gradient(to bottom, #86ffaf, #29f732) #fff8fd;
+        margin: 5px;
+        word-wrap: break-word;
+        font: 20px Roboto;
+        font-weight: bold;
+        overflow: hidden;
+    }
+
+    .simb-ready {
+        position: relative;
+        float: left;
+        background-color: #e52e69;
+        margin: 10px;
+        width: 20px;
+        height: 20px;
+        border-radius: 10px;
+    }
+
+    .simb-name {
+        position: relative;
+        float: left;
+        top: 8px;
+        text-align: center;
+    }
+
+    .gamerbar {
+        position: relative;
+        float: left;
+        background-color: #eedb9e;
+        margin: 10px;
+        margin-top: 0px;
+        border: 1px solid black;
+        width: calc(100% - 22px);
+        height: 30px;
+    }
+
+    .indicator {
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 0%;
+        background: linear-gradient(to bottom, #92a0f3, #1038af) #596eac;
+    }
+
+    .tablobox {
+        position: relative;
+        float: left;
+        width: 60%;
+        height: 100%;
+        overflow: auto;
+        background-color: #b2c6f1;
+    }
+
+    .tablo {
+        position: absolute;
+        left: 15px;
+        right: 15px;
+        top: 15px;
+        bottom: 15px;
+        background-color: white;
+        font-family: 'Courier New';
+        font-size: 18px;
+    }
+
+    .timer {
+        display: none;
+        position: absolute;
+        top: calc(50% - 100px);
+        left: calc(50% - 100px);
+        width: 200px;
+        height: 200px;
+        background-color: darkgrey;
+        border: 20px solid sandybrown;
+        font-family: "Arial Black";
+        font-weight: bold;
+        font-size: 120px;
+        text-align: center;
+    }
+
+    .users {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        align-items: center;
+        justify-content: flex-start;
+        position: relative;
+        float: left;
+        height: 60%;
+        width: 100%;
+        overflow: auto;
+        background-color: #89e7e7;
+    }
+
+    .gemers_chat {
+        position: relative;
+        float: left;
+        width: 30%;
+        min-height: 100%;
+        background-color: #ec768f;
+        overflow: auto;
+    }
+
+    .button-back {
+        top: 60px;
+        left: calc(50% - 90px);
+        height: 60px;
+        width: 180px;
+        font-size: 20px;
+        font-family: "Times New Roman";
+        z-index: 1;
+    }
+
+    .button-ready {
+        top: 140px;
+        left: calc(50% - 90px);
+        height: 60px;
+        width: 180px;
+        font-size: 20px;
+        font-size: 20px;
+        font-family: "Times New Roman";
+    }
+
+    .gametime {
+        position: absolute;
+        top: 65px;
+        left: 65px;
+        height: 40px;
+        width: 100px;
+        font-size: 20px;
+        font-family: "Times New Roman";
+    }
+
+    .roomtext {
+        position: relative; 
+        float: left; 
+        width: 70%; 
+        font-size: 16px; 
+        margin-left: 5%;
+    }
+
+    .roommess {
+        position: relative; 
+        float: left; 
+        text-indent: 5%; 
+        width: 90%; 
+        height: 75%; 
+        margin-top: 3%; 
+        margin-left: 5%; 
+        margin-bottom: 5px; 
+        background-color: #f6f1f1;
+    }
+
+    .commentator {
+        position: absolute; 
+        left:5%; 
+        top: 3%; 
+        width: calc(90% - 10px); 
+        height: 60%; 
+        border: 5px solid rgb(23, 182, 23); 
+        border-radius: 1vw; 
+        background-color: white;
+        overflow: hidden;
+    }
+
+    @keyframes commentshow {
+        0%  { top: 50%; left: 50%; width:  0%; height: 0%; overflow: hidden}
+      100%  { top:  0; left: 0; width: 95%; height: 95%; overflow-y: hidden}
+    }
+
+    .comment {
+        position: relative;
+        float: top;
+        width: 96%;
+        height: 95%;
+        font-size: 1vw;
+        text-indent: 5%;
+        text-align: justify;
+        margin: 2%;
+        overflow-x: hidden;
+        overflow-y: auto;
+        animation: commentshow 1s linear;
+    }
