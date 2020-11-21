@@ -1,4 +1,4 @@
-import { testInputValue } from "./helpers/userhelper.mjs";
+import { testInputValue } from "./helpers/userHelper.mjs";
 
 const username = sessionStorage.getItem("username");
 const submitButton = document.getElementById("submit-button");
