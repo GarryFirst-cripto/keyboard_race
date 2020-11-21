@@ -1,4 +1,4 @@
-import { elementFactory } from "../helpers/domhelper.mjs"
+import { elementFactory } from "../helpers/domHelper.mjs"
 
 const modalClose = event => {
   document.body.removeChild(event.currentTarget);
