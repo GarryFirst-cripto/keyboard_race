@@ -1,4 +1,4 @@
-import { callWebApi } from "./apihelper.mjs";
+import { callWebApi } from "./apiHelper.mjs";
 
 export const testInputValue = async (value) => {
   const response = await callWebApi({
