@@ -1,11 +1,11 @@
-import { testInputValue } from "./helpers/userHelper.mjs";
+// import { testInputValue } from "./helpers/userHelper.mjs";
 
 const username = sessionStorage.getItem("username");
 const submitButton = document.getElementById("submit-button");
 const input = document.getElementById("username-input");
 
 const onClickSubmitButton = async () => {
-  const inputName = await testInputValue(input.value);
+  const inputName = ''; // await testInputValue(input.value);
   if (!inputName) {
     return;
   }
@@ -25,7 +25,7 @@ window.addEventListener("keyup", onKeyUp);
 
 window.onload = async () => {
   if (username) {
-    const inputName = await testInputValue(username);
+    const inputName = ''; // await testInputValue(username);
     if (inputName === username) window.location.replace("/game");
   }
 }
