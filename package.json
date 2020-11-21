@@ -4,6 +4,7 @@
   "description": "Keyboard Game",
   "main": "server.js",
   "scripts": {
+    "build": "webpack --mode production",
     "start": "babel-node server.js --exec"
   },
   "author": "Garry Levin",
@@ -17,5 +18,10 @@
     "express": "^4.17.1",
     "socket.io": "^2.3.0"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "babel-loader": "^8.1.0",
+    "webpack": "^4.44.2",
+    "webpack-cli": "^3.3.12",
+    "webpack-node-externals": "^2.5.2"
+  }
 }
