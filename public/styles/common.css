@@ -17,6 +17,9 @@
 
 .flex {
   display: flex;
+  padding: 15px;
+  background-color: var(--white);
+  border: 1px solid var(--input-border-color);
 }
 
 .no-select {
@@ -33,7 +36,7 @@ input {
   padding: 5px 10px;
   outline: none;
   background-color: var(--white);
-  border: 1px solid var(--input-border-color);
+  border: 2px solid var(--input-border-color);
 }
 
 input::placeholder {
