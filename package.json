@@ -1,7 +1,7 @@
 {
-  "name": "http-ws-hw-starter",
+  "name": "Keyboard-Game",
   "version": "1.0.0",
-  "description": "Keyboard Game",
+  "description": "Keyboard Game by Garry Levin",
   "main": "server.js",
   "scripts": {
     "build": "webpack --mode production",
