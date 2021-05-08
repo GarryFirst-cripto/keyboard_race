@@ -54,7 +54,6 @@ function insertGamer(gamer) {
   );
   newGamer.children[1].style.color = gamer.usernm === username ? 'red' : 'black';
 
-  //  Pattern "Facade"
   newGamer.facade = state => {
     if (state.ready) {
       newGamer.children[0].style.backgroundColor = state.ready === 'Y' ? 'green' : 'red';

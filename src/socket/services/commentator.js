@@ -3,14 +3,14 @@ import { users } from './userServices';
 import { COMMENT_INTERVAL } from '../config';
 import * as mess from './messages';
 
-const startComment = 'Привет ! <br /> Мы с вами снова на центральном клавадроме страны и с вами Я - ваш любимый комментатор Клавиатурный Макс !';
-const newUserComment = 'Привет ! Мы рады, что вы присоединились к нам ! <br /> Я - ваш любимый комментатор Клавиатурный Макс и я веду свой репортаж с центрального клаводрома страны !';
-const nextComment = 'С вами Я - ваш комментатор Клавиатурный Макс !';
-const finComment = 'С Вами был Я - Клавиатурный Макс и это были незабываемые гонки на центральном клаводроме страны ...';
-const restartComment = 'А мы между тем продолжаем свою трансляцию. Готовится еще один заезд. Все ли клаво-гонщики примут в нем участи ? Следите за нашим эфиром !';
+const startComment = 'Hi ! <br /> We are with you again at the central key-drome of the country and I am your favorite commentator Keyboard Max with you !';
+const newUserComment = 'Hello ! We are glad that you have joined us ! <br /> I am your favorite commentator Keyboard Max and I am reporting from the central key-drome of the country  !';
+const nextComment = 'I am with you - your commentator Keyboard Max !';
+const finComment = 'I have been with you - your Keyboard Max, and it was an unforgettable race on the central capital key-drome ...';
+const restartComment = 'Meanwhile, we continue our broadcast. Another race is being prepared right now. Will all keyboard-racers take part in it? Follow our transmission !';
 
-const distTextA = ['с небольшим отрывом', 'с заметным отрывом', 'с большим отрывом'];
-const distTextB = ['буквально по пятам', 'немного отставая', ''];
+const distTextA = ['by a small margin', 'with a noticeable advantage', 'with huge advantage'];
+const distTextB = ['literally on the heels', 'slightly behind', ''];
 
 class Commentator {
 
@@ -107,50 +107,50 @@ class Commentator {
   }
 
   firstResults(current) {
-    let txt = 'А вто и первые результаты гонки : <br />';
+    let txt = 'We already have the first race results : <br />';
     if (current.length > 1) {
       const distType = this.getdistType(current[0].poss, current[1].poss);
-      txt += `${distTextA[distType]} лидирует ${current[0].usernm} он на отметке ${current[0].poss} <br />`;
-      txt += `за ним ${distTextB[distType]} следует ${current[1].usernm} <br />`;
+      txt += `In the lead ${current[0].usernm} ${distTextA[distType]}, he is on the mark ${current[0].poss} <br />`;
+      txt += `${current[1].usernm} follows him ${distTextB[distType]} <br />`;
       for (let i = 2; i < current.length; i++) {
         if (i === current.length - 1) {
-          txt += `и последним сейчас идет ${current[i].usernm} на отметке ${current[i].poss}`;
+          txt += `and the last ${current[i].usernm} at ${current[i].poss}`;
         } else {
-          txt += `следующим в гонке идет ${current[i].usernm} на отметке ${current[i].poss} <br />`;
+          txt += `the next ${current[i].usernm} on the mark ${current[i].poss} <br />`;
         }
       };
       return txt;
     } else {
-      return txt + `клавогонщик ${current[0].usernm} на ${current[0].poss}-й отметке`;
+      return txt + `keyboard-racer ${current[0].usernm} at ${current[0].poss} mark`;
     }
   }
 
   nextResults(current) {
-    let txt = 'Новая информация о ходе гонки : <br />';
+    let txt = 'Fresh information about the course of the race : <br />';
     if (current.length > 1) {
       const distType = this.getdistType(current[0].poss, current[1].poss);
       if (current[0].finish) {
-        txt += `${current[0].usernm} уверенно финишировал. Он победительгонки ! <br />`;
-        txt += `На втором месте - ${current[1].usernm} он ${current[1].finish ? 'финишировал вторым' : 'он пока на отметке' + current[1].poss} <br />`;
+        txt += `${current[0].usernm} finished confidently. He is the race winner ! <br />`;
+        txt += `In second place - ${current[1].usernm}, he ${current[1].finish ? 'finished second' : 'he is still at the mark ' + current[1].poss} <br />`;
       } else {
         if (current[0].usernm === this.curResults[0].usernm) {
-          txt += `По прежнему ${distTextA[distType]} лидирует ${current[0].usernm}`;
+          txt += `${current[0].usernm} still lead ${distTextA[distType]}`;
         } else {
-          txt += `Вперед вырвался ${current[0].usernm} и лидирует ${distTextA[distType]}`;
+          txt += `${current[0].usernm} breaked ahead and is in the lead ${distTextA[distType]}`;
         };
-        txt += ` он сейчас на отметке  ${current[0].poss} <br />`;
-        txt += `за ним ${distTextB[distType]} следует ${current[1].usernm} <br />`;
+        txt += ` he have crossed the mark ${current[0].poss} <br />`;
+        txt += `${current[1].usernm} follows him ${distTextB[distType]}<br />`;
       }
       for (let i = 2; i < current.length; i++) {
         if (i === current.length - 1) {
-          txt += `и последним ${current[i].usernm === this.curResults[i].usernm ? 'по прежнему' : 'теперь'} идет ${current[i].usernm} на отметке ${current[i].poss}`;
+          txt += `and at the last position ${current[i].usernm === this.curResults[i].usernm ? 'as before' : 'now'} ${current[i].usernm} at the mark ${current[i].poss}`;
         } else {
-          txt += `следующим в гонке идет ${current[i].usernm} на отметке ${current[i].poss} <br />`;
+          txt += `the next ${current[i].usernm} on the mark ${current[i].poss} <br />`;
         }
       };
       return txt;
     } else {
-      return txt + `клавогонщик ${current[0].usernm} на ${current[0].poss}-й отметке`;
+      return txt + `keyboard-racer ${current[0].usernm} at ${current[0].poss} mark`;
     }
   }
 

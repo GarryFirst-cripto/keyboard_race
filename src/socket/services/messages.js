@@ -8,40 +8,40 @@ const autos = [
 ]
 
 const colors = [
-  'красный',
-  'белый',
-  'черный',
-  'оранжевый',
-  'синий',
-  'зеленый',
-  'желтый'
+  'red',
+  'white',
+  'black',
+  'orange',
+  'blue',
+  'green',
+  'yellow'
 ]
 
 const noGamers = [
-  'Пока ждем остальных гонщиков ...',
-  'Клавадром ждет остальных участников !',
-  'Остальные участники вот-вот появятся.'
+  'While we wait for the rest of the riders ...',
+  'Key-drome awaits the rest of the participants !',
+  'The rest of the members are going to appear soon.'
 ]
 
 const outsMess = [
-  'Вы слышите, как ревет клаводром ? <br /> Болельщики с нетерпением ждут ! Гонка вот-вот начнется !',
-  'Идут последние приготовления перед стартом гонки ! <br /> Последние инструкции и наставления от тренеров. '
-  + 'Атмосфера накалена до предела ... ',
-  'Зрители в нетерпении : кто же победит сегодня ? <br /> Трудно предсказать результат при таком сложном составе участников.',
-  'До старта осталось совсем немного. На нашем клаводроме сегодня отличная погода для гонок. Клаводром заполнен почти полностью.',
-  'Почти все готово к соревнованиям. Можно было бы и начинать. Публика на клаводроме проявляет большое нетерпение !'
+  'Can you hear the key-drome roar ? <br /> Fans are eagerly awaiting! The race is about to begin! ',
+  'Final preparations are in progress before the start of the race ! <br /> Latest instructions from trainers. '
+  + 'The atmosphere is heated to the limit ... ',
+  'Spectators are impatient: who will win today ? <br /> It is difficult to predict the outcome with such a complex line-up.',
+  'There is very little left before the start. The weather is great for racing today. The key-drome is filled with fanats up to the brim.',
+  'Almost everything is ready for the competition. We could have started. The audience at the key-drome is very impatient!'
 ]
 
 const onStartMess = [
-  'Итак наша гонка началась ! Гонщики стремительно рванулись вперед, что творится на трибунах ...',
-  'Старт дан ! Никаких сомнений, только полный вперед ! Болельщики поддерживают своих фаворитов !',
-  'Долгожданный момент настал ! Гонщики устремились к финишу ! Кому улыбнется удача ?',
-  'Гонка началась ! Нас ждут незабываемые минуты ! Пожелаем удачи нашим спортсменам !'
+  'So our race has begun ! Racers rushed forward swiftly, what"s going on in the stands ...',
+  'So start have been given ! No doubt, just full speed ahead ! Fans support their favorites !',
+  'The long awaited moment has come ! Racers rushed to the finish line ! Who will be lucky ?',
+  'The race has begun ! Unforgettable minutes await all us ! We wish good luck to all our racers !'
 ]
 
 const onfinMess = [
-  'Гонка завершилась ! Это был незабываемый день !',
-  'Все, все гонщики на финише !',
+  'The race is over! ! It was an incredible day !',
+  'That"s All ! All the riders at the finish line  !',
 ]
 
 export function randomIndex(max) {
@@ -49,8 +49,6 @@ export function randomIndex(max) {
   return Math.floor(rand);
 }
 
-//  Pattern "Proxy"
-//  Случайный выбор цвета и марки автомобиля геймера.
 function createProxy(obj) {
   return new Proxy(obj, {
     get(target, prop) {
@@ -71,12 +69,12 @@ export const messageExit = (userId, auto, index) => {
   const random = randomIndex(2);
   switch (random) {
     case 0:
-      return `С дорожки № ${index} исчез ${auto} гонщика ${userId} ! <br /> Наверное что-то случилось с двигателем ...`;
+      return `${userId} ${auto} car disappeared from track № ${index} ! <br /> May be something have happened to the engine ...`;
     case 1:
-      return `Нас покинул участник под номером ${index} : ${userId} ! <br /> Его ${auto} возвращается в гараж. Какая потеря для гонки !`;
+      return `Member with number ${index} left us : ${userId} ! <br /> His ${auto} returns to the garage. What a loss for the race !`;
     case 2:
-      return `С большим сожалением должен сообщить, что я не вижу ${userId} ! Его ${auto} исчез с дорожки ${index} .`
-      + 'Что же случилось с этим спортсменом ?';
+      return `With great regret, I must inform you that I no longer see ${userId} ! His ${auto} disappeared from track № ${index} .`
+        + 'What have happened to this sportsman ?';
   }
 }
 
@@ -84,11 +82,11 @@ export const messageExitRace = (userId, auto, index) => {
   const random = randomIndex(2);
   switch (random) {
     case 0:
-      return `Совершенно непредвиденно с гонки сошел ${userId} ! Я больше не вижу ${auto} на дорожке ${index} ! <br /> Какая потеря для наших соревнований ...`;
+      return `Quite unexpectedly retired from the race ${userId} ! I can't see anymore ${auto} on the track ${index} ! <br /> What a loss for our competition ...`;
     case 1:
-      return `С дистанции сошел участник под номером ${index} : ${userId} ! <br /> Кто мог это ожидать ? Его ${auto} так уверенно рвался к финишу ...`;
+      return `The participant with the number ${index} left the race : ${userId} ! <br /> Who could have expected this ? His ${auto} rushed to the finish line so confidently ...`;
     case 2:
-      return `С большим сожалением должен сообщить, что наши соревнования покинул ${userId} ! Его ${auto} исчез с дорожки ${index} . Очень жаль ...`
+      return `With great regret I must inform you that ${userId} has left our competition ! His ${auto} disappeared from track № ${index} . Very sorry ...`
   }
 }
 
@@ -98,25 +96,25 @@ const qualification = (raceCount, raceWin) => {
   switch (raceCount) {
     case 0:
     case 1:
-      text = 'молодой, начинающий клаво-гонщик';
-      textDop = 'только';
+      text = 'young beginner keyboard racer';
+      textDop = 'only';
       break;
     case 2:
     case 3:
     case 4:
-      text = 'не новичек на клаводроме';
+      text = 'not new to лун-drome';
       break;
     case 5:
     case 6:
     case 7:
-      text = 'довольно опытный клаво-гонщик';
-      textDop = 'уже';
+      text = 'quite experienced keyboard racer';
+      textDop = 'already';
       break;
     default:
-      text = 'очень опытный гонщик';
-      textDop = 'уже';
+      text = 'very experienced racer';
+      textDop = 'already';
   }
-  text += `, это ${textDop} его ${raceCount+1} заезд, на его счету ${raceWin} побед`;
+  text += `, it is ${textDop} his ${raceCount + 1} race, he has ${raceWin} wins on his score`;
   return text;
 }
 
@@ -124,11 +122,11 @@ export const messageInfo = (userId, auto, raceCount, raceWin, index) => {
   const random = randomIndex(2);
   switch (random) {
     case 0:
-      return `На дорожке № ${index} мы видим ${auto}. Это ${userId} ! <br /> ${userId} ${qualification(raceCount, raceWin)}. Болельщики шумно приветствуют своего любимца !`;
+      return `On track № ${index} we can see ${auto}. This is ${userId} ! <br /> ${userId} ${qualification(raceCount, raceWin)}. Fans greet their favorite noisily !`;
     case 1:
-      return `Дорожку под номером ${index} занимает ${auto}. Мы рады приветствовать ${userId} ! <br /> ${userId} ${qualification(raceCount, raceWin)}. Пожелаем ему удачи !`;
+      return `Track number ${index} occuped ${auto}. We are glad to welcome ${userId} ! <br /> ${userId} ${qualification(raceCount, raceWin)}. We wish him good luck !`;
     case 2:
-      return `На дорожке под номером ${index} мы рады увидеть ${userId} ! Это ${qualification(raceCount, raceWin)}. Его ${auto} просто рвется вперед !`;
+      return `On track numbered ${index} we are glad to see ${userId} ! This is ${qualification(raceCount, raceWin)}. His ${auto} tear"s forward !`;
   }
 }
 
@@ -136,25 +134,25 @@ export const messageAdd = (userId, auto, raceCount, raceWin, index) => {
   const random = randomIndex(4);
   switch (random) {
     case 0:
-      return `К нам присоединился ${userId} ! Его ${auto} на дорожке № ${index}. <br /> ${userId} ${qualification(raceCount, raceWin)}. Вы слышите, как радостно реагируют трибуны ?`;
+      return `${userId} joined us ! His ${auto} on track № ${index}. <br /> ${userId} ${qualification(raceCount, raceWin)}. Can you hear the crowd reacting happily ?`;
     case 1:
-      return `А вот и еще один участник наших соревнований под номером ${index} ! Это ${userId} и его знаменитый ${auto}. Мы рады приветствовать ${userId} !`
+      return `And here is another participant in our competition numbered ${index} ! This is ${userId} and his famous ${auto}. We are glad to welcome ${userId} !`
       + `<br /> ${userId} ${qualification(raceCount, raceWin)}.`;
     case 2:
-      return `Нашего полку прибыло ! <br /> На дорожке номер ${index} теперь ${auto}. Это ${userId} ! Это ${qualification(raceCount, raceWin)}. Поединок будет очень сложным !`;
+      return `We have replenishment ! <br /> On track number ${index} now ${auto}. This is ${userId} ! It"s ${qualification(raceCount, raceWin)}. The fight will be very difficult !`;
     case 3:
-      return `На дорожке номер ${index} теперь с нами ${auto} и ${userId} ! <br /> Приветствуем нового участника ! Это ${qualification(raceCount, raceWin)}.`;      
+      return `On track number ${index} now with us ${auto} and ${userId} ! <br /> Welcome new member ! It is ${qualification(raceCount, raceWin)}.`;
     case 4:
-      return `Отличная новость перед стартом ! На дорожку номер ${index} выходит ${auto} и ${userId} ! <br /> Приветствуем ${userId} ! Это ${qualification(raceCount, raceWin)}.`; 
+      return `Great news before the start ! On track number ${index} comes out ${auto} and ${userId} ! <br /> Greetings ${userId} ! It is ${qualification(raceCount, raceWin)}.`;
   }
 }
 
-const textPlace = Indd => {
+const textPlace = indd => {
   switch (indd) {
     case 2:
-      return 'третьем';
+      return 'third';
     case 3:
-      return 'четвертом';
+      return 'fourth';
   }
   return '';
 }
@@ -164,23 +162,23 @@ export const messageFinish = (results) => {
   let text = finMessage[''];
   switch (random) {
     case 0:
-      text += `Наш победитель ${results[0].name} и его ${results[0].auto} c результатом ${results[0].raits}. <br /> Это его ${results[0].raceWin} победа !`;
+      text += `Our winner ${results[0].name} and his ${results[0].auto} with result ${results[0].raits}. <br /> This is his ${results[0].raceWin}th victory !`;
       break;
     case 1:
-      text += `Сегодняшний день принес ${results[0].raceWin} победу ${results[0].name} ! Он и его ${results[0].auto} на вершине пьедистала с результатом ${results[0].raits} !`
+      text += `Today brought ${results[0].raceWin}th victory ${results[0].name} ! He and his ${results[0].auto} at the top of the pedestal with the result ${results[0].raits} !`
       break;
     case 2:
-      text += `Мы поздравляем с замечательной победой ${results[0].name} и его ${results[0].auto} ! ${results[0].raits} ! Это его ${results[0].raceWin} победа !`;
+      text += `We congratulate you on a wonderful victory ${results[0].name} and his ${results[0].auto} ! ${results[0].raits} ! This is his ${results[0].raceWin}th victory !`;
       break;
   }
   if (results.length >= 2) {
-    text += `<br /> На втором месте ${results[1].name} с результатом ${results[1].raits}.`
+    text += `<br /> In second place ${results[1].name} with result ${results[1].raits}.`
   }
   for (let i = 2; i < results.length; i++) {
     if (i < results.length - 1) {
-      text += `<br /> На ${textPlace(i)} месте ${results[i].name} с результатом ${results[i].raits}.`;
+      text += `<br /> In ${textPlace(i)} place ${results[i].name} with result ${results[i].raits}.`;
     } else {
-      text += `<br /> И на последнем месте у нас ${results[i].name} с результатом ${results[i].raits}.`;
+      text += `<br /> And in last place we have ${results[i].name} with result ${results[i].raits}.`;
     }
   }
   return text;
@@ -190,11 +188,11 @@ export const messageFinLine = (userId, auto, finished) => {
   const random = randomIndex(2);
   switch (random) {
     case 0:
-      return `На финишной прямой - ${auto} ! Это ${userId} ! У него неплохие шансы финишировать ${finished+1}-м. Вы слышите, как радостно реагируют трибуны ?`;
+      return `At the finish line - ${auto} ! This is ${userId} ! He has a good chance of finishing ${finished + 1}th. Can you hear the crowd reacting happily ?`;
     case 1:
-      return `Какое оживление на трибунах ! На финишной прямой ${userId} и его знаменитый ${auto}. Болельщики ликуют !`;
+      return `What excitement in the stands! At the finish line ${userId} and his famous ${auto}. The fans cheer !`;
     case 2:
-      return `На финишной прямой - ${auto} ! Это ${userId} Возможно это наш победитель ! Небывалый ажиотаж среди зрителей !`;
+      return `At the finish line - ${auto} ! This is ${userId} Perhaps this is our winner! Unprecedented excitement among the audience!`;
   }
 }
 
@@ -202,14 +200,14 @@ export const messageWinner = userId => {
   const random = randomIndex(2);
   switch (random) {
     case 0:
-      return `Итак : у нас есть победитель ! Это ${userId} ! Он уверенно шел к своей победе !`;
+      return `So: we have a winner! This is ${userId} ! He walked towards his victory confidently !`;
     case 1:
-      return `Да ! В сегодняшней гонке заслуженно победил ${userId}. Болельщики ликуют !`;
+      return `Yes ! ${userId} deservedly won in today's race. Fans triumphing !`;
     case 2:
-      return `А сегодня у нас уверенно побеждает ${userId} ! Небывалый ажиотаж среди зрителей !`;
+      return `And today ${userId} confidently winning ! Unbelievable excitement among the spectators !`;
   }
 }
 
 export const messageNoWinner = (usernm, finished) => {
-  return `Еще один гонщик успешно справился с заездом ! ${usernm} финиширует ${finished}.`
+  return `Another driver successfully completed the race ! ${usernm} finishes ${finished}.`
 }

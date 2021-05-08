@@ -5,8 +5,8 @@ function checkString(str) {
   return valid.test(str);
 }
 
-const errormess = 'Недопустимый символ в строке ! \n (Используйте только буквы и цифры)';
-const erroruser = 'Пользователь с таким имененем уже зарегистрирован !';
+const errormess = 'Invalid character in line ! \n (Use only letters and numbers)';
+const erroruser = 'User with such name has already been registered !';
 
 export const userNameValid = (req, res, next) => {
   try {

@@ -9,14 +9,12 @@ const texts = [
   'The seas around Britain can be very dangerous. The Romans, who conquered England in 43 AD, knew this. They built lighthouses at Dover in England and Boulogne in France to guide ships across the Channel. However, the lighthouses fell into disuse after the Romans left at the beginning of the 5th century. For hundreds of years, the seas around Britain were completely dark at night. There was nothing to help sailors find their way, or to warn them of dangers.'
 ];
 
-//  Pattern "Factory"
-//  Хотя здесь он абсолютно не обязателен.
 export const proxyText = new Proxy(texts, {
   get(target, prop) {
     if (prop in target) {
       return target[prop];
     } else {
-      return 'Этот абзац недоступен !';
+      return 'This paragraph is not available !';
     }
   }
 });

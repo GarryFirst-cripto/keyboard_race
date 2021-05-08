@@ -12,7 +12,7 @@ export const showModal = (title, message) => {
           tagName: 'section', className: 'modalwindow', children: [
             { tagName: 'div', className: 'modaltitle', text: title },
             { tagName: 'div', className: 'modalresult', text: message },
-            { tagName: 'div', className: 'modalfooter', text: '(Кликните где-нибудь ...)' }
+            { tagName: 'div', className: 'modalfooter', text: '(Click somewhere ...)' }
           ]
         }
       ]

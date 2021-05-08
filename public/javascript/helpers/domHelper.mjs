@@ -21,8 +21,6 @@ export function createElement(value) {
   return element;
 }
 
-
-//  Pattern "Factory"
 export function elementFactory(elemStructure) {
   const element = createElement(elemStructure);
   if (elemStructure.children) {

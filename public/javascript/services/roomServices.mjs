@@ -59,7 +59,6 @@ function createRoom(roomname) {
     }
   );
   newRoom.children[1].innerText = roomname;
-  //  Pattern "Facade"
   newRoom.facade = room => {
     const roomBusy = room.started || room.full;
     newRoom.children[0].innerText = room.full ? `Room FULL (${room.users} users) !` : `${room.users} user${room.users > 1 ? 's' : ''} connected`;
@@ -87,7 +86,7 @@ export const roomRemove = room => {
 }
 
 async function createNewRoom() {
-  const newRoom = prompt("Введите название новой комнаты :");
+  const newRoom = prompt("Enter new room name :");
   const rmName = await testRoomName(newRoom, username);
   roomname = newRoom;
   if (rmName === newRoom) {
@@ -98,7 +97,7 @@ async function createNewRoom() {
 
 function userMessage() {
   if (addressee === '') {
-    alert('Выберите адресата ...')
+    alert('Select recipient ...')
   } else {
     const input = document.getElementById('message');
     const message = input.value;

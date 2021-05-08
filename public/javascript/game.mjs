@@ -25,7 +25,7 @@ socket.on('connect', () => {
   socket.emit('username', username);
 });
 
-//  События пользователя  
+//  User events
 
 socket.on('userupdate', user => {
   userAddUpdate(user);
@@ -35,7 +35,7 @@ socket.on('userleave', user => {
   userRemove(user);
 });
 
-//  События списка комнат
+//  Room list events
 
 socket.on('roomupdate', room => {
   if (msglogg) {
@@ -54,7 +54,7 @@ socket.on('delroom', room => {
   roomRemove(room);
 });
 
-//  События игровой комнаты
+//  Game room events
 
 socket.on('gameroom', room => {
   gameroomUpdate(room);
@@ -69,7 +69,7 @@ socket.on('comment', comment => {
   newComment(comment);
 });
 
-//  События во время игры
+//  Game events
 
 socket.on('prepare', data => {
   prepareGame(data);

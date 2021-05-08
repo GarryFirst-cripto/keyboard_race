@@ -24,8 +24,6 @@ function randomIndex(max) {
   return Math.floor(rand);
 }
 
-//  Pattern "Proxy"
-//  Звуковое сопровождение событий игры.
 export const proxyAudio = new Proxy(audios, {
   get(target, prop) {
     switch (prop) {

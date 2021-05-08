@@ -6,7 +6,7 @@ document.getElementById('logoffButton').addEventListener('click', logOff);
 const userbox = document.getElementById('userbox');
 
 function logOff() {
-  if (confirm('Вы действительно хотите выйти из игры ?')) {
+  if (confirm('Do you really want to exit the game ?')) {
     sessionStorage.setItem('username', '');
     window.location.replace('/login');
   }
@@ -23,7 +23,7 @@ function selectUser(event) {
     addressee = addr;
     document.getElementById('addressee').innerText = `Адресат : ${addressee}`;
   } else {
-    alert('Этот адресат сейчас в одной из комнат \n и не сможет прочесть Ваше сообщение ...');
+    alert('This addressee is now in one of the rooms  \n and not be able to read your message ...');
   }
 }
 

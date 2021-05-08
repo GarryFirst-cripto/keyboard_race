@@ -1,7 +1,7 @@
 import { rooms } from '../../socket/services/roomServices';
 
-const errorroom = 'Комната с таким именем уже создана !';
-const errorname = 'Название комнаты не должно быть пустым !';
+const errorroom = 'A room with such name has already been created !';
+const errorname = 'Room name could not be empty !';
 
 export const roomNameValid = (req, res, next) => {
   try {

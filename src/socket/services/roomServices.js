@@ -68,8 +68,6 @@ export const messageToRoom = (io, roomname) => {
       rooms.get(roomname).users.forEach(item => { roomlogg = roomlogg && item.ready });
       if (roomlogg) {
         rooms.get(roomname).game = startgame(io, roomname);
-        // Pattern Observer
-        // Осуществляется подписка комментатора на основные события гонки
         const commentator = rooms.get(roomname).commentator;
         const raceEvents = { 
           onStart: commentator.startRace, 
