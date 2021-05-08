@@ -102,7 +102,7 @@ const qualification = (raceCount, raceWin) => {
     case 2:
     case 3:
     case 4:
-      text = 'not new to лун-drome';
+      text = 'not new to key-drome';
       break;
     case 5:
     case 6:
