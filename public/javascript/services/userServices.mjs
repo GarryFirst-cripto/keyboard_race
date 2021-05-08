@@ -21,7 +21,7 @@ function selectUser(event) {
   const addr = event.target.innerText;
   if (testAddressee(addr)) {
     addressee = addr;
-    document.getElementById('addressee').innerText = `Адресат : ${addressee}`;
+    document.getElementById('addressee').innerText = `Addressee : ${addressee}`;
   } else {
     alert('This addressee is now in one of the rooms  \n and not be able to read your message ...');
   }

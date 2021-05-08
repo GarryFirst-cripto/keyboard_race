@@ -37,7 +37,7 @@ class Game {
 
   doGameTimer() {
     this.gametime--;
-    this.io.to(this.roomId).emit('gametimer', this.gametime + ' сек.');
+    this.io.to(this.roomId).emit('gametimer', this.gametime + ' sec.');
     if (this.gametime === 0) {
       this.io.to(this.roomId).emit('endgame');
       this.finish();
@@ -121,7 +121,7 @@ class Game {
     let text = '';
     let i = 1;
     results.forEach(item => {
-      text += `${i}-е место : ${item.name} ( ${item.raits} знаков в сек.) \n`;
+      text += `${i}th place : ${item.name} ( ${item.raits} chars per second.) \n`;
       users.get(item.name).raceCount++;
       if (i = 1) {
         users.get(item.name).raceWin++;

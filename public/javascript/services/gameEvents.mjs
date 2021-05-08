@@ -46,7 +46,7 @@ const resetGamers = () => {
 }
 
 export function resultGame(data) {
-  showModal('Результаты гонки :', data);
+  showModal('Race results :', data);
   document.getElementById('exitroom').style.display = 'block';
   document.getElementById('setready').style.display = 'block';
   document.getElementById('setready').innerText = caps[0];
