@@ -1,8 +1,13 @@
 import { userAddUpdate, userRemove } from './services/userServices.mjs';
+const { userAddUpdate, userRemove } = require('./services/userServices.mjs');
 import { roomAddUpdate, selectRoomPage, roomRemove, addmessage } from './services/roomServices.mjs';
+const { userAddUpdate, userRemove } = require('./services/roomServices.mjs');
 import { gameroomUpdate, addRoomMessage, newComment } from './services/gameServices.mjs';
+const { userAddUpdate, userRemove } = require('./services/gameServices.mjs');
 import { prepareGame, startGame, endGame, resultGame, userPoint } from './services/gameEvents.mjs';
+const { userAddUpdate, userRemove } = require('./services/gameEvents.mjs');
 import { proxyAudio } from './helpers/audioHelper.mjs';
+const { proxyAudio } = require('./helpers/audioHelper.mjs');
 
 export const username = sessionStorage.getItem("username");
 if (!username) {
